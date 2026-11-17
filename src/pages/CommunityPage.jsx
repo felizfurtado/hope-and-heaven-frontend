@@ -93,15 +93,12 @@ export default function CommunityPage({ onNavigate }) {
             Find people, prayers and experiences that meet you where you are.
           </p>
 
-          <div className="mt-4 flex w-fit items-center gap-2 rounded-full bg-[#F7F2E8] px-4 py-[9px] text-[11px] font-semibold text-[#174735]">
-            <span>Explore the Community</span>
-            <i className="fa-solid fa-arrow-right text-[10px]" />
-          </div>
+          
         </div>
       </section>
 
       {/* Explore heading */}
-      <section className="px-[22px] pb-3 pt-7">
+      <section id="community-spaces" className="px-[22px] pb-3 pt-7">
         <div className="flex items-center justify-between">
           <div>
             <span className="text-[10px] font-semibold uppercase tracking-[1.8px] text-[#A7864C]">
@@ -119,56 +116,46 @@ export default function CommunityPage({ onNavigate }) {
         </div>
       </section>
 
-      {/* Community cards */}
-      <section className="grid grid-cols-2 gap-3 px-[22px]">
-        {communityItems.map((item, index) => (
-          <div
-            key={item.title}
-            className={`group relative flex min-h-[145px] flex-col gap-3 overflow-hidden rounded-[22px] border border-[#EAE3D5] bg-[#FFFCF5] p-4 text-left shadow-[0_5px_12px_rgba(35,50,37,0.04)] transition duration-200 ${
-              item.wide
-                ? "col-span-2 min-h-[125px] flex-row items-center px-5"
-                : ""
-            }`}
-            style={{
-              animation: `rise 0.5s ease ${index * 0.05}s both`,
-            }}
-          >
-            {/* Icon */}
-            <div className="relative flex h-[44px] w-[44px] shrink-0 items-center justify-center rounded-[15px] bg-[#E6EEE7] text-[19px] text-[#174735]">
-              <i className={item.icon} />
-            </div>
+    
+{/* Community cards */}
+<section className="grid grid-cols-2 gap-3 px-[22px]">
+  {communityItems.map((item, index) => (
+    <div
+      key={item.title}
+      className={`group relative flex min-h-[145px] flex-col gap-3 overflow-hidden rounded-[22px] border border-[#EAE3D5] bg-[#F8F5EE] p-4 text-left opacity-65 shadow-[0_5px_12px_rgba(35,50,37,0.02)] ${
+        item.wide
+          ? "col-span-2 min-h-[125px] flex-row items-center px-5"
+          : ""
+      }`}
+      style={{
+        animation: `rise 0.5s ease ${index * 0.05}s both`,
+      }}
+    >
+      {/* Icon */}
+      <div className="relative flex h-[44px] w-[44px] shrink-0 items-center justify-center rounded-[15px] bg-[#EAE7DE] text-[19px] text-[#89877D]">
+        <i className={item.icon} />
+      </div>
 
-            {/* Content */}
-            <div className="relative min-w-0 flex-1 pr-2">
-              <h3 className="font-serif text-[16px] font-semibold leading-[1.25] text-[#1D211D]">
-                {item.title}
-              </h3>
+      {/* Content */}
+      <div className="relative min-w-0 flex-1 pr-2">
+        <h3 className="font-serif text-[16px] font-semibold leading-[1.25] text-[#77766E]">
+          {item.title}
+        </h3>
 
-              <p className="mt-2 text-[11.5px] leading-[1.55] text-[#77766E]">
-                {item.description}
-              </p>
-            </div>
+        <p className="mt-2 text-[11.5px] leading-[1.55] text-[#99968C]">
+          {item.description}
+        </p>
+      </div>
 
-            {/* Premium crown */}
-            {item.premium && (
-              <div className="absolute right-3 top-3 flex h-[23px] w-[23px] items-center justify-center rounded-full bg-[#F3E7CA] text-[10px] text-[#A7864C]">
-                <i className="fa-solid fa-crown" />
-              </div>
-            )}
+      {/* Coming Soon Label */}
+<div className="absolute right-3 top-3 rounded-full border border-[#E6DDCA] bg-[#F3EBDD] px-2.5 py-1 text-[8px] font-semibold uppercase tracking-[1px] text-[#9A835D]">
+  <i className="fa-solid fa-lock mr-1.5 text-[8px]" />
+  Coming Soon
+</div>
+    </div>
+  ))}
+</section>
 
-            {/* Arrow */}
-            <div
-              className={`absolute grid h-[25px] w-[25px] place-items-center rounded-full bg-[#F7F2E8] text-[10px] text-[#174735] ${
-                item.wide
-                  ? "right-4 top-1/2 -translate-y-1/2"
-                  : "bottom-3 right-3"
-              }`}
-            >
-              <i className="fa-solid fa-arrow-right" />
-            </div>
-          </div>
-        ))}
-      </section>
 
       {/* Inspirational quote */}
       <section className="mx-[22px] mt-7 rounded-[22px] border border-[#EAE3D5] bg-[#F0E8D9] px-5 py-6 text-center">
