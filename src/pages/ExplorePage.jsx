@@ -121,6 +121,7 @@ export default function ExplorePage({ onNavigate }) {
 
       
 
+
 {/* Emotion cards */}
 {!loading && !error && filteredFeelings.length > 0 && (
   <section className="grid grid-cols-2 gap-3 px-[22px]">
@@ -135,27 +136,27 @@ export default function ExplorePage({ onNavigate }) {
           key={feeling.id}
           type="button"
           onClick={() => handleFeelingClick(feeling)}
-          className="group relative flex min-h-[145px] flex-col gap-3 overflow-hidden rounded-[22px] border border-[#EAE3D5] bg-[#FFFCF5] p-4 text-left shadow-[0_5px_12px_rgba(35,50,37,0.04)] transition duration-200 hover:-translate-y-[2px] hover:shadow-[0_8px_16px_rgba(35,50,37,0.07)] active:scale-[0.98]"
+          className="group relative flex min-h-[118px] flex-col gap-2 rounded-[20px] border border-[#EAE3D5] bg-[#FFFCF5] p-3 text-left shadow-[0_4px_10px_rgba(35,50,37,0.03)] transition duration-200 hover:-translate-y-[2px] hover:border-[#D5CBB9] hover:shadow-[0_6px_14px_rgba(35,50,37,0.06)] active:scale-[0.98]"
           style={{
             animation: `rise 0.5s ease ${index * 0.05}s both`,
           }}
         >
           {/* Icon */}
           <div
-            className={`relative flex h-[44px] w-[44px] shrink-0 items-center justify-center rounded-[15px] text-[19px] ${style.color}`}
+            className={`flex h-[38px] w-[38px] shrink-0 items-center justify-center rounded-[13px] text-[17px] ${style.color}`}
           >
             <i className={style.icon} />
           </div>
 
           {/* Emotion name */}
-          <div className="relative min-w-0 flex-1 pr-5">
+          <div className="min-w-0 flex-1 pr-6">
             <h3 className="font-serif text-[16px] font-semibold leading-[1.25] text-[#1D211D]">
               {feeling.name}
             </h3>
           </div>
 
           {/* Arrow */}
-          <div className="absolute bottom-3 right-3 grid h-[25px] w-[25px] place-items-center rounded-full bg-[#F7F2E8] text-[10px] text-[#174735] transition-transform duration-200 group-hover:translate-x-0.5">
+          <div className="absolute bottom-3 right-3 grid h-[24px] w-[24px] place-items-center rounded-full bg-[#F7F2E8] text-[10px] text-[#174735] transition-transform duration-200 group-hover:translate-x-0.5">
             <i className="fa-solid fa-arrow-right" />
           </div>
         </button>
