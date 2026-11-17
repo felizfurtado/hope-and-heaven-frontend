@@ -1,0 +1,56 @@
+
+{
+  "Sadness": [
+    "Feeling lonely and abandoned",
+    "Losing a loved one",
+    "Heartbreak and rejection",
+    "Feeling unloved",
+    "Feeling misunderstood",
+    "Emotional pain",
+    "Disappointment in life",
+    "Missing someone"
+  ],
+  "Anxiety": [
+    "Fear of the future",
+    "Overthinking",
+    "Fear of failure",
+    "Financial worries",
+    "Fear of losing someone",
+    "Uncertainty about life decisions",
+    "Feeling overwhelmed"
+  ],
+  "Anger": [
+    "Difficulty forgiving someone",
+    "Being betrayed",
+    "Feeling treated unfairly",
+    "Family conflicts",
+    "Resentment towards someone"
+  ],
+  "Gratitude": [
+    "Thanking God for answered prayers",
+    "Celebrating a new beginning",
+    "Being thankful for family",
+    "Gratitude for good health",
+    "Celebrating academic or career success",
+    "Thanking God for protection",
+    "Being grateful for everyday blessings"
+  ],
+  "Spiritual dryness": [
+    "Losing interest in prayer",
+    "Feeling God is silent",
+    "Questioning your faith",
+    "Wanting to return to God",
+    "Difficulty concentrating during prayer",
+    "Feeling distant from Jesus",
+    "Struggling to trust God's plan"
+  ],
+  "Temptation": [
+    "Repeatedly falling into the same sin",
+    "Sexual temptation and impure thoughts",
+    "Addiction and unhealthy habits",
+    "Temptation to lie and deceive",
+    "Anger, revenge and hurting others",
+    "Jealousy and envy",
+    "Peer pressure and worldly influences"
+  ]
+}

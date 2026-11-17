@@ -1,0 +1,26 @@
+{
+  "Sadness": {
+    "icon": "fa-regular fa-face-sad-tear",
+    "color": "bg-[#E7EEF1] text-[#466C7C]"
+  },
+  "Anxiety": {
+    "icon": "fa-solid fa-cloud",
+    "color": "bg-[#E7EEF1] text-[#466C7C]"
+  },
+  "Anger": {
+    "icon": "fa-regular fa-face-angry",
+    "color": "bg-[#F5E4E1] text-[#B75A54]"
+  },
+  "Gratitude": {
+    "icon": "fa-regular fa-star",
+    "color": "bg-[#F6ECD3] text-[#B98628]"
+  },
+  "Spiritual dryness": {
+    "icon": "fa-solid fa-seedling",
+    "color": "bg-[#E6EEE7] text-[#416C4B]"
+  },
+  "Temptation": {
+    "icon": "fa-solid fa-shield-heart",
+    "color": "bg-[#ECEBE6] text-[#68716C]"
+  }
+}

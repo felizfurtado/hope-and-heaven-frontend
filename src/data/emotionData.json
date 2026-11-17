@@ -1,0 +1,260 @@
+{
+  "Sadness": {
+    "Feeling lonely and abandoned": [
+      "Do you feel like nobody understands what you are going through?",
+      "Do you feel forgotten or abandoned by the people you love?",
+      "Do you feel like you have nobody to turn to when life gets difficult?",
+      "Do you feel lonely even when you are surrounded by people?"
+    ],
+    "Losing a loved one": [
+      "Are you finding it difficult to accept the loss of someone you love?",
+      "Do you feel lonely and miss the presence of the person who passed away?",
+      "Are you struggling to find peace or comfort after their death?",
+      "Are you worried about the soul of the person you have lost and praying for their eternal rest?"
+    ],
+    "Heartbreak and rejection": [
+      "Are you struggling to move on from someone you deeply loved?",
+      "Do you feel unwanted, rejected or not good enough because someone didn't choose you?",
+      "Are you finding it difficult to forgive someone who broke your heart?",
+      "Are you afraid that you will never find love or experience happiness again?"
+    ],
+    "Feeling unloved": [
+      "Do you feel that nobody truly cares about you or notices your presence?",
+      "Do you feel unloved or unwanted by your family or the people closest to you?",
+      "Do you feel that you are not good enough to receive love because of your flaws or past mistakes?",
+      "Do you feel abandoned because someone you love does not love you back?"
+    ],
+    "Feeling misunderstood": [
+      "Do you feel that nobody understands what you are going through, even when you try to explain yourself?",
+      "Do you feel judged or criticised by people instead of being heard?",
+      "Do you feel emotionally neglected by your family or the people closest to you?",
+      "Do you feel alone because nobody understands your thoughts, feelings or decisions?"
+    ],
+    "Emotional pain": [
+      "Are you hurting because someone you love has hurt, betrayed or disappointed you?",
+      "Are you struggling to move on from something painful that happened in your past?",
+      "Do you feel emotionally exhausted because you have been pretending to be okay when you are actually hurting inside?",
+      "Are you finding it difficult to forgive someone who has caused you deep emotional pain?"
+    ],
+    "Disappointment in life": [
+      "Are you disappointed because things haven't turned out the way you hoped or planned?",
+      "Do you feel that your hard work and efforts have not brought you the results you expected?",
+      "Are you disappointed because someone you trusted has let you down?",
+      "Have you lost hope because you feel your life is not progressing as you expected?"
+    ],
+    "Missing someone": [
+      "Are you missing someone who lives far away from you?",
+      "Are you missing someone you have lost contact with or become distant from?",
+      "Are you missing someone with whom you wish you could spend more time?",
+      "Are you missing someone who has passed away?"
+    ]
+  },
+  "Anxiety": {
+    "Fear of the future": [
+      "Are you afraid of what tomorrow holds because you don't know what is going to happen?",
+      "Are you worried that your future will not turn out the way you planned?",
+      "Are you afraid that you won't be successful or that you will fail in life?",
+      "Are you worried about how you will manage your future responsibilities, finances and family?"
+    ],
+    "Overthinking": [
+      "Do you constantly worry about what might happen in the future?",
+      "Do you keep replaying past conversations or situations and wondering what you could have done differently?",
+      "Do you struggle to make decisions because you are afraid of making the wrong choice?",
+      "Do your thoughts become so overwhelming that you struggle to find peace or sleep?"
+    ],
+    "Fear of failure": [
+      "Am I afraid that I will fail despite putting in my best efforts?",
+      "Am I afraid of disappointing my family or the people who believe in me?",
+      "Do I feel that one failure will ruin my future or define who I am?",
+      "Am I afraid to take risks or try something new because I might fail?"
+    ],
+    "Financial worries": [
+      "Am I worried about not having enough money to meet my basic needs and daily expenses?",
+      "Am I struggling with debt, loans or financial obligations that feel impossible to manage?",
+      "Am I afraid of losing my job, having an unstable income or being unable to provide for my family?",
+      "Am I uncertain about my financial future and worried about making the wrong decisions with money?"
+    ],
+    "Fear of losing someone": [
+      "Are you afraid that someone you love might pass away or that you may lose them to death?",
+      "Are you constantly worried about the safety, health or well-being of someone close to you?",
+      "Are you afraid that someone you love will drift away, abandon you or stop loving you?",
+      "Are you struggling to accept that you cannot control what happens to someone you love?"
+    ],
+    "Uncertainty about life decisions": [
+      "Are you afraid of making the wrong decision and regretting it later?",
+      "Are you struggling to understand what God wants you to do with your life?",
+      "Are you feeling pressured by family or others to make a decision that you are unsure about?",
+      "Are you worried about what will happen after you make an important decision?"
+    ],
+    "Feeling overwhelmed": [
+      "Do you feel like you have too many responsibilities and don't know where to begin?",
+      "Do you feel mentally and emotionally exhausted from everything happening around you?",
+      "Do you feel pressured to meet everyone's expectations and afraid of disappointing them?",
+      "Do you feel helpless because your problems seem too big for you to handle alone?"
+    ]
+  },
+  "Anger": {
+    "Difficulty forgiving someone": [
+      "Are you finding it difficult to forgive someone who has deeply hurt you?",
+      "Do you still feel resentment or anger towards someone because of what they did to you?",
+      "Do you want to forgive someone but feel that the pain is too difficult to overcome?",
+      "Are you struggling to let go of the past and find peace with someone who wronged you?"
+    ],
+    "Being betrayed": [
+      "Have you been betrayed by someone you deeply trusted?",
+      "Are you struggling to forgive the person who betrayed you?",
+      "Do you feel hurt, abandoned or alone after being betrayed?",
+      "Are you finding it difficult to trust people again after being betrayed?"
+    ],
+    "Feeling treated unfairly": [
+      "Are you feeling that someone has judged or blamed you unfairly?",
+      "Are you being mistreated despite doing your best to treat others with kindness?",
+      "Do you feel that your hard work is being overlooked or that others are receiving credit for what you have done?",
+      "Are you struggling with anger or resentment because someone has wronged you?"
+    ],
+    "Family conflicts": [
+      "Are you experiencing constant arguments or misunderstandings with your family members?",
+      "Do you feel hurt, neglected or unappreciated by your family?",
+      "Are you struggling to forgive a family member for something they have done?",
+      "Are you worried about your family's unity, peace or relationships falling apart?"
+    ],
+    "Resentment towards someone": [
+      "Are you finding it difficult to let go of the hurt someone has caused you?",
+      "Do you find yourself constantly thinking about the person who hurt you and feeling bitter towards them?",
+      "Are you struggling to forgive someone even though you know you should?",
+      "Do you feel that the person who hurt you got away without facing the consequences?"
+    ]
+  },
+  "Gratitude": {
+    "Thanking God for answered prayers": [
+      "Have you recently received an answer to a prayer that you had been waiting for?",
+      "Has God blessed you with something you once thought was impossible?",
+      "Do you want to thank God for guiding you through a difficult situation and answering your prayers?",
+      "Have you experienced healing, protection or restoration through God's grace?"
+    ],
+    "Celebrating a new beginning": [
+      "Are you beginning a new chapter in your life and seeking God's guidance?",
+      "Are you grateful for a fresh start after overcoming difficult times?",
+      "Are you starting a new career, job, or educational journey and praying for success?",
+      "Are you welcoming a new opportunity and praying for the courage to embrace it?"
+    ],
+    "Being thankful for family": [
+      "Are you thankful for having a loving and supportive family?",
+      "Are you grateful for your parents and the sacrifices they have made for you?",
+      "Are you thankful that your family has stayed united through difficult times?",
+      "Are you grateful for the love, care and protection your family gives you?"
+    ],
+    "Gratitude for good health": [
+      "Are you grateful to God for blessing you with good health and strength?",
+      "Do you thank God for protecting you from illness and keeping you safe?",
+      "Are you grateful for recovering from an illness or overcoming a health challenge?",
+      "Do you appreciate the gift of life and the ability to live each day with a healthy body?"
+    ],
+    "Celebrating academic or career success": [
+      "Are you thanking God for helping you achieve an academic milestone or pass an important examination?",
+      "Are you celebrating a promotion, new job or career opportunity?",
+      "Are you grateful for the talents, knowledge and abilities God has blessed you with?",
+      "Are you thanking God for guiding you through challenges and helping you succeed in your career or studies?"
+    ],
+    "Thanking God for protection": [
+      "Are you grateful to God for protecting you and your family from danger?",
+      "Are you thankful to God for keeping you safe during difficult and uncertain times?",
+      "Are you grateful to God for protecting you while travelling and keeping you safe wherever you go?",
+      "Are you thankful to God for protecting you from evil, temptation and spiritual attacks?"
+    ],
+    "Being grateful for everyday blessings": [
+      "Do you take time to thank God for the little things in your everyday life?",
+      "Are you grateful for the people God has placed in your life?",
+      "Do you recognise God's blessings even during difficult days?",
+      "Do you remember to thank God for His protection and guidance each day?"
+    ]
+  },
+  "Spiritual dryness": {
+    "Losing interest in prayer": [
+      "Do you find it difficult to make time for prayer because of distractions or a busy routine?",
+      "Do you feel that praying has become repetitive, empty or meaningless?",
+      "Do you feel spiritually disconnected from God and struggle to find the desire to speak to Him?",
+      "Have you stopped praying because you feel God isn't listening or answering your prayers?"
+    ],
+    "Feeling God is silent": [
+      "Do you feel like God is not listening to your prayers?",
+      "Do you feel abandoned by God during difficult times?",
+      "Are you struggling to understand why God hasn't answered your prayers?",
+      "Do you find it difficult to recognise God's presence in your everyday life?"
+    ],
+    "Questioning your faith": [
+      "Are you struggling to believe that God is listening to your prayers?",
+      "Do you find yourself doubting God's existence or questioning whether He is real?",
+      "Are you finding it difficult to trust God's plan because of the suffering or hardships you are experiencing?",
+      "Do you feel spiritually lost and wonder whether you can ever regain your faith?"
+    ],
+    "Wanting to return to God": [
+      "Do you feel distant from God and wish to rebuild your relationship with Him?",
+      "Do you regret your past sins and want God's forgiveness?",
+      "Have you lost your faith or stopped praying regularly, and wish to reconnect with God?",
+      "Do you feel unworthy of God's love but want to begin your spiritual journey again?"
+    ],
+    "Difficulty concentrating during prayer": [
+      "Do you find your mind wandering whenever you try to pray?",
+      "Do you struggle to find the right words when speaking to God?",
+      "Do you feel spiritually distracted by worldly worries and daily responsibilities?",
+      "Do you struggle to remain consistent and disciplined in your prayer life?"
+    ],
+    "Feeling distant from Jesus": [
+      "Do you feel like Jesus is no longer present in your life, even when you pray?",
+      "Have you stopped praying regularly because you feel disconnected from God?",
+      "Do you feel that your sins and past mistakes have created a distance between you and Jesus?",
+      "Do you struggle to recognise or trust Jesus working in your everyday life?"
+    ],
+    "Struggling to trust God's plan": [
+      "Why is God allowing things to happen differently from what I prayed for?",
+      "How can I trust God when I cannot see what lies ahead?",
+      "Why does it feel like God is delaying the blessings I have been praying for?",
+      "How can I surrender my plans and accept God's will even when it is difficult?"
+    ]
+  },
+  "Temptation": {
+    "Repeatedly falling into the same sin": [
+      "Are you repeatedly falling into the same sin despite promising yourself that you will stop?",
+      "Are you struggling to resist temptation even when you know something is wrong?",
+      "Are you feeling guilty and unworthy of God's forgiveness after falling into sin again?",
+      "Are you finding it difficult to break free from sinful habits and return wholeheartedly to God?"
+    ],
+    "Sexual temptation and impure thoughts": [
+      "Are you struggling to control sexual desires and temptations?",
+      "Are you experiencing unwanted sexual thoughts or fantasies that disturb your peace?",
+      "Are you struggling with pornography or other sexually explicit content?",
+      "Do you feel guilty or spiritually distant from God because of sexual sins?"
+    ],
+    "Addiction and unhealthy habits": [
+      "Are you struggling to break free from an addiction or dependency?",
+      "Do you find yourself repeatedly falling into the same sinful habits despite wanting to change?",
+      "Are you struggling with self-control, discipline or resisting temptation?",
+      "Do you feel ashamed, guilty or hopeless because of your unhealthy habits and past mistakes?"
+    ],
+    "Temptation to lie and deceive": [
+      "Are you tempted to lie to avoid getting into trouble or facing the consequences of your actions?",
+      "Are you tempted to deceive others to gain something or benefit yourself?",
+      "Are you hiding the truth because you are afraid of being judged, rejected or disappointing someone",
+      "Are you struggling to be honest, keep your promises and admit when you have lied?"
+    ],
+    "Anger, revenge and hurting others": [
+      "Are you holding on to anger because someone has deeply hurt you?",
+      "Are you wishing to hurt someone or take revenge because of what they did to you?",
+      "Are you hurting others with your words or actions because you struggle to control your anger?",
+      "Are you finding it difficult to forgive someone and let go of resentment?"
+    ],
+    "Jealousy and envy": [
+      "Are you jealous when you see others succeeding while you are struggling?",
+      "Are you comparing your appearance, achievements or possessions with others and feeling inadequate?",
+      "Are you resentful when someone receives attention, love or recognition that you desire?",
+      "Are you secretly wishing others would fail or lose what they have because you envy them?"
+    ],
+    "Peer pressure and worldly influences": [
+      "Are you compromising your values or faith just to fit in with others?",
+      "Are you allowing worldly desires, trends or material possessions to take priority over God?",
+      "Are you afraid of being judged, rejected or excluded because of your Christian beliefs?",
+      "Are you surrounding yourself with people who lead you away from God and encourage you to sin?"
+    ]
+  }
+}
