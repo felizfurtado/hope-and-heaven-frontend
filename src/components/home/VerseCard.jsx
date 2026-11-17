@@ -1,13 +1,13 @@
 
 import { useEffect, useState } from "react";
-import { apiUrl } from "../../services/api";
+import { apiFetch } from "../../services/api";
 
 export default function VerseCard({ verse, loading, onToast }) {
   const [saved, setSaved] = useState(false);
   const [saving, setSaving] = useState(false);
   const [checkingSaved, setCheckingSaved] = useState(false);
 
-  // Check whether this verse is already saved in the database
+  // Check whether this verse is already saved
   useEffect(() => {
     if (!verse?.id || loading) {
       setSaved(false);
@@ -20,24 +20,10 @@ export default function VerseCard({ verse, loading, onToast }) {
       try {
         setCheckingSaved(true);
 
-        const token = localStorage.getItem("access");
-
-        if (!token) {
-          setSaved(false);
-          return;
-        }
-
-        const response = await fetch(apiUrl("saved-verses/"), {
+        const response = await apiFetch("saved-verses/", {
           method: "GET",
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
           signal: controller.signal,
         });
-
-        if (response.status === 401) {
-          throw new Error("Your session has expired. Please sign in again.");
-        }
 
         if (!response.ok) {
           throw new Error("Unable to check saved verses.");
@@ -46,6 +32,7 @@ export default function VerseCard({ verse, loading, onToast }) {
         const data = await response.json();
 
         setSaved(
+          Array.isArray(data) &&
           data.some((item) => item.verse_id === verse.id)
         );
       } catch (error) {
@@ -65,13 +52,11 @@ export default function VerseCard({ verse, loading, onToast }) {
     return () => controller.abort();
   }, [verse?.id, loading]);
 
-  // Save or remove verse from database
+  // Save or remove verse
   const handleSave = async () => {
     if (!verse?.id || saving || checkingSaved || loading) return;
 
-    const token = localStorage.getItem("access");
-
-    if (!token) {
+    if (!localStorage.getItem("access")) {
       onToast?.("Please sign in to save verses.");
       return;
     }
@@ -79,18 +64,15 @@ export default function VerseCard({ verse, loading, onToast }) {
     setSaving(true);
 
     try {
-      const response = await fetch(
+      const response = await apiFetch(
         saved
-          ? apiUrl(`saved-verses/${verse.id}/`)
-          : apiUrl("saved-verses/"),
+          ? `saved-verses/${verse.id}/`
+          : "saved-verses/",
         {
           method: saved ? "DELETE" : "POST",
-          headers: {
-            Authorization: `Bearer ${token}`,
-            ...(saved
-              ? {}
-              : { "Content-Type": "application/json" }),
-          },
+          headers: saved
+            ? {}
+            : { "Content-Type": "application/json" },
           ...(!saved && {
             body: JSON.stringify({
               verse_id: verse.id,
@@ -98,10 +80,6 @@ export default function VerseCard({ verse, loading, onToast }) {
           }),
         }
       );
-
-      if (response.status === 401) {
-        throw new Error("Your session has expired. Please sign in again.");
-      }
 
       if (!response.ok) {
         throw new Error("Unable to update saved verse.");
@@ -182,33 +160,38 @@ export default function VerseCard({ verse, loading, onToast }) {
       <div className="mt-4 flex gap-2">
 
         {/* Save */}
-       <button
-  type="button"
-  onClick={handleSave}
-  disabled={!verse || loading || saving || checkingSaved}
-  className={`inline-flex items-center gap-2 rounded-full border px-[14px] py-[9px] text-[12.5px] font-medium transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50 ${
-    saved
-      ? "border-[#174735] bg-[#174735] !text-white"
-      : "border-[#EAE3D5] bg-[#F7F2E8] text-[#1D211D] hover:border-[#174735]"
-  }`}
->
-  <i className={`fa-bookmark ${saved ? "fa-solid !text-white" : "fa-regular"}`} />
+        <button
+          type="button"
+          onClick={handleSave}
+          disabled={!verse || loading || saving || checkingSaved}
+          className={`inline-flex items-center gap-2 rounded-full border px-[14px] py-[9px] text-[12.5px] font-medium transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-50 ${
+            saved
+              ? "border-[#174735] bg-[#174735] !text-white"
+              : "border-[#EAE3D5] bg-[#F7F2E8] text-[#1D211D] hover:border-[#174735]"
+          }`}
+        >
+          <i
+            className={`fa-bookmark ${
+              saved ? "fa-solid !text-white" : "fa-regular"
+            }`}
+          />
 
-  <span className={saved ? "!text-white" : "text-[#1D211D]"}>
-    {saved ? "Saved" : "Save"}
-  </span>
-</button>
+          <span className={saved ? "!text-white" : "text-[#1D211D]"}>
+            {saving ? "Saving..." : saved ? "Saved" : "Save"}
+          </span>
+        </button>
 
- {/* Share */}
-<button
-  type="button"
-  onClick={handleShare}
-  disabled={!verse || loading}
-  className="inline-flex items-center gap-2 rounded-full border border-[#EAE3D5] bg-[#F7F2E8] px-[14px] py-[9px] text-[12.5px] font-medium text-[#1D211D] transition-all duration-200 hover:border-[#174735] active:border-[#174735] active:bg-[#174735] active:!text-white disabled:cursor-not-allowed disabled:opacity-50"
->
-  <i className="fa-solid fa-share-nodes active:!text-white" />
-  Share
-</button>
+        {/* Share */}
+        <button
+          type="button"
+          onClick={handleShare}
+          disabled={!verse || loading}
+          className="inline-flex items-center gap-2 rounded-full border border-[#EAE3D5] bg-[#F7F2E8] px-[14px] py-[9px] text-[12.5px] font-medium text-[#1D211D] transition-all duration-200 hover:border-[#174735] active:border-[#174735] active:bg-[#174735] active:!text-white disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          <i className="fa-solid fa-share-nodes active:!text-white" />
+          Share
+        </button>
+
       </div>
     </section>
   );

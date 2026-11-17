@@ -3,15 +3,11 @@ const API_BASE_URL = (
   import.meta.env.VITE_API_BASE_URL || "http://127.0.0.1:8000/api"
 ).replace(/\/+$/, "");
 
-// Build API URLs
-export const apiUrl = (endpoint) => {
-  return `${API_BASE_URL}/${endpoint.replace(/^\/+/, "")}`;
-};
+export const apiUrl = (endpoint) =>
+  `${API_BASE_URL}/${endpoint.replace(/^\/+/, "")}`;
 
-// Share one refresh request across simultaneous API calls
 let refreshPromise = null;
 
-// Get a new access token
 const refreshAccessToken = async () => {
   const refresh = localStorage.getItem("refresh");
 
@@ -36,6 +32,7 @@ const refreshAccessToken = async () => {
 
         localStorage.setItem("access", data.access);
 
+        // Save rotated refresh token if the backend returns one.
         if (data.refresh) {
           localStorage.setItem("refresh", data.refresh);
         }
@@ -50,7 +47,6 @@ const refreshAccessToken = async () => {
   return refreshPromise;
 };
 
-// Authenticated requests with automatic token refresh
 export const apiFetch = async (endpoint, options = {}) => {
   const makeRequest = (token) => {
     const headers = new Headers(options.headers || {});
@@ -65,20 +61,16 @@ export const apiFetch = async (endpoint, options = {}) => {
     });
   };
 
-  let access = localStorage.getItem("access");
+  const access = localStorage.getItem("access");
   let response = await makeRequest(access);
 
-  // Return immediately if authentication is successful
   if (response.status !== 401) {
     return response;
   }
 
   try {
-    // Refresh the expired access token
-    access = await refreshAccessToken();
-
-    // Retry the original request
-    response = await makeRequest(access);
+    const newAccess = await refreshAccessToken();
+    response = await makeRequest(newAccess);
 
     if (response.status === 401) {
       throw new Error("Authentication failed after token refresh.");
