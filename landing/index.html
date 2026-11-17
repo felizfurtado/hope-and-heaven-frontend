@@ -1,0 +1,1379 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Hope & Heaven — a quieter, more personal way to find comfort, strength and hope through God's Word." />
+  <meta name="theme-color" content="#f5f3ed" />
+  <title>Hope & Heaven — Find hope for every season</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+  <style>
+    :root {
+      --ink:#172a23;
+      --forest:#214d3c;
+      --forest-deep:#132f25;
+      --sage:#dfe8df;
+      --sage-2:#edf1e9;
+      --paper:#f5f3ed;
+      --white:#fffefa;
+      --muted:#72796f;
+      --line:#e4e4d9;
+      --gold:#c59a55;
+      --gold-pale:#f0e5ce;
+      --serif:"Playfair Display", Georgia, serif;
+      --sans:"DM Sans",sans-serif;
+      --display:"Manrope",sans-serif;
+      --shadow:0 24px 70px rgba(24,48,36,.12);
+    }
+
+    * {
+      box-sizing:border-box;
+      margin:0;
+      padding:0;
+    }
+
+    html {
+      scroll-behavior:smooth;
+      scroll-padding-top:90px;
+    }
+
+    body {
+      background:var(--paper);
+      color:var(--ink);
+      font-family:var(--sans);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      overflow-x:hidden;
+    }
+
+    a {
+      color:inherit;
+      text-decoration:none;
+    }
+
+    button {
+      font:inherit;
+    }
+
+    .wrap {
+      width:min(1160px,calc(100% - 48px));
+      margin:auto;
+    }
+
+    /* NAVIGATION */
+
+    .topbar {
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(245,243,237,.9);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(228,228,217,.8);
+    }
+
+    .nav {
+      height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .brand {
+      display:flex;
+      align-items:center;
+      gap:11px;
+    }
+
+    .brand img {
+      width:42px;
+      height:42px;
+      object-fit:contain;
+    }
+
+    .brand strong {
+      display:block;
+      font:600 19px var(--serif);
+      letter-spacing:-.3px;
+      color:var(--forest-deep);
+    }
+
+    .brand small {
+      display:block;
+      margin-top:1px;
+      color:var(--gold);
+      font:700 9px var(--display);
+      letter-spacing:2.2px;
+    }
+
+    .navlinks {
+      display:flex;
+      gap:30px;
+      align-items:center;
+      color:#667168;
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .navlinks a:hover {
+      color:var(--forest);
+    }
+
+    .menu {
+      display:none;
+      border:1px solid var(--line);
+      background:var(--white);
+      color:var(--forest);
+      width:42px;
+      height:42px;
+      border-radius:50%;
+    }
+
+    /* HERO */
+
+    .hero {
+      position:relative;
+      min-height:660px;
+      display:grid;
+      grid-template-columns:1fr .92fr;
+      align-items:center;
+      gap:56px;
+      padding:76px 0 88px;
+    }
+
+    .hero:before {
+      content:"";
+      position:absolute;
+      z-index:-1;
+      width:600px;
+      height:600px;
+      right:-210px;
+      top:-90px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(197,154,85,.17),transparent 68%);
+    }
+
+    .hero-copy {
+      max-width:610px;
+    }
+
+    .kicker {
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      color:var(--gold);
+      font:800 10px var(--display);
+      letter-spacing:2.5px;
+      text-transform:uppercase;
+    }
+
+    .kicker:before {
+      content:"";
+      width:26px;
+      height:1px;
+      background:var(--gold);
+    }
+
+    h1 {
+      margin-top:24px;
+      font:500 clamp(48px,6vw,76px)/1.04 var(--serif);
+      letter-spacing:-2.2px;
+      color:var(--forest-deep);
+    }
+
+    h1 em {
+      color:var(--gold);
+      font-weight:400;
+    }
+
+    .hero-copy>p {
+      max-width:490px;
+      margin-top:25px;
+      color:#687269;
+      font-size:16px;
+      line-height:1.9;
+    }
+
+    .hero-actions {
+      display:flex;
+      align-items:center;
+      gap:18px;
+      margin-top:34px;
+    }
+
+    .login {
+      display:inline-flex;
+      align-items:center;
+      gap:12px;
+      padding:15px 23px;
+      border-radius:7px;
+      background:var(--forest);
+      color:white;
+      font-size:13px;
+      font-weight:700;
+      box-shadow:0 10px 22px rgba(33,77,60,.18);
+      transition:.25s;
+    }
+
+    .login:hover {
+      background:var(--forest-deep);
+      transform:translateY(-2px);
+    }
+
+    .login i {
+      font-size:11px;
+    }
+
+    .hero-caption {
+      margin-top:22px;
+      color:#8a9086;
+      font-size:11px;
+      letter-spacing:.2px;
+    }
+
+    /* HERO VISUAL */
+
+    .hero-art {
+      position:relative;
+      min-height:500px;
+      display:grid;
+      place-items:center;
+    }
+
+    .art-orbit {
+      position:absolute;
+      width:min(440px,90%);
+      aspect-ratio:1;
+      border:1px solid #d8ddcf;
+      border-radius:50%;
+    }
+
+    .art-orbit:before,
+    .art-orbit:after {
+      content:"";
+      position:absolute;
+      border:1px solid #e0e2d7;
+      border-radius:50%;
+      inset:25px;
+    }
+
+    .art-orbit:after {
+      inset:55px;
+      border-style:dashed;
+    }
+
+    .verse-card {
+      position:relative;
+      z-index:2;
+      width:310px;
+      min-height:390px;
+      padding:30px;
+      border-radius:180px 180px 24px 24px;
+      background:var(--forest);
+      color:white;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+
+    .verse-card:before {
+      content:"";
+      position:absolute;
+      width:250px;
+      height:250px;
+      left:30px;
+      top:35px;
+      border:1px solid rgba(255,255,255,.2);
+      border-radius:50%;
+      box-shadow:
+        0 0 0 18px rgba(255,255,255,.025),
+        0 0 0 38px rgba(255,255,255,.025);
+    }
+
+    .verse-card:after {
+      content:"✳";
+      position:absolute;
+      top:87px;
+      left:50%;
+      transform:translateX(-50%);
+      font-size:78px;
+      color:rgba(238,222,187,.75);
+      font-family:serif;
+    }
+
+    .verse-card small {
+      position:relative;
+      color:#e3c993;
+      font:700 9px var(--display);
+      letter-spacing:2px;
+      text-transform:uppercase;
+    }
+
+    .verse-card blockquote {
+      position:relative;
+      margin-top:13px;
+      font:400 25px/1.45 var(--serif);
+    }
+
+    .verse-card cite {
+      position:relative;
+      margin-top:18px;
+      color:#d7dfd5;
+      font:700 10px var(--display);
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+      font-style:normal;
+    }
+
+    .floating {
+      position:absolute;
+      z-index:3;
+      right:-4px;
+      bottom:58px;
+      padding:15px 18px;
+      background:var(--white);
+      border:1px solid var(--line);
+      box-shadow:0 12px 35px rgba(24,48,36,.1);
+      border-radius:10px;
+      color:var(--forest);
+      font:500 13px var(--serif);
+    }
+
+    .floating i {
+      color:var(--gold);
+      margin-right:8px;
+    }
+
+    /* TRUST BAND */
+
+    .intro-band {
+      background:var(--forest-deep);
+      color:white;
+      padding:24px 0;
+    }
+
+    .band-inner {
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:center;
+    }
+
+    .band-inner span {
+      font:600 11px var(--display);
+      letter-spacing:1px;
+      color:#e2e8df;
+    }
+
+    .band-inner i {
+      color:#d5b779;
+      margin-right:9px;
+    }
+
+    /* COMMON SECTIONS */
+
+    section.block {
+      padding:105px 0;
+    }
+
+    .section-head {
+      max-width:650px;
+      margin:0 auto 52px;
+      text-align:center;
+    }
+
+    .section-head .kicker {
+      justify-content:center;
+    }
+
+    h2 {
+      margin-top:17px;
+      font:500 clamp(34px,4vw,50px)/1.15 var(--serif);
+      letter-spacing:-1px;
+      color:var(--forest-deep);
+    }
+
+    .section-head p {
+      margin:17px auto 0;
+      max-width:560px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.85;
+    }
+
+    /* FEELINGS */
+
+    .feelings {
+      background:var(--white);
+    }
+
+    .feeling-grid {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+    }
+
+    .feeling-card {
+      padding:25px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fff;
+      transition:.25s;
+    }
+
+    .feeling-card:hover {
+      transform:translateY(-4px);
+      border-color:#c7d2c5;
+      box-shadow:0 14px 30px rgba(24,48,36,.07);
+    }
+
+    .feeling-card .ico {
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      background:var(--sage-2);
+      color:var(--forest);
+      border-radius:10px;
+    }
+
+    .feeling-card h3 {
+      margin-top:19px;
+      font:500 21px var(--serif);
+      color:var(--forest);
+    }
+
+    .feeling-card p {
+      margin-top:7px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.75;
+    }
+
+    /* HOW IT WORKS */
+
+    .how {
+      background:var(--paper);
+    }
+
+    .steps {
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:34px;
+    }
+
+    .step {
+      padding:25px 20px;
+      border-top:1px solid #d9d8ca;
+    }
+
+    .step-no {
+      color:var(--gold);
+      font:500 34px var(--serif);
+    }
+
+    .step h3 {
+      margin-top:18px;
+      color:var(--forest);
+      font:500 22px var(--serif);
+    }
+
+    .step p {
+      margin-top:9px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.8;
+    }
+
+    /* SCRIPTURE */
+
+    .scripture {
+      background:var(--forest);
+      color:white;
+      text-align:center;
+      padding:100px 24px;
+    }
+
+    .scripture .kicker {
+      color:#e5cb97;
+      justify-content:center;
+    }
+
+    .scripture blockquote {
+      max-width:800px;
+      margin:26px auto 0;
+      font:400 clamp(29px,4vw,44px)/1.4 var(--serif);
+    }
+
+    .scripture cite {
+      display:block;
+      margin-top:25px;
+      color:#e5cb97;
+      font:700 10px var(--display);
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-style:normal;
+    }
+
+    /* JOURNEYS */
+
+    .journeys {
+      background:var(--white);
+    }
+
+    .journey-grid {
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:16px;
+    }
+
+    .journey {
+      position:relative;
+      min-height:210px;
+      padding:27px;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:#fbfaf5;
+      transition:.25s;
+    }
+
+    .journey:hover {
+      border-color:#c7d2c5;
+      transform:translateY(-3px);
+    }
+
+    .journey .ico {
+      width:42px;
+      height:42px;
+      display:grid;
+      place-items:center;
+      border-radius:10px;
+      background:var(--forest);
+      color:#e8d4a8;
+    }
+
+    .journey h3 {
+      margin-top:25px;
+      font:500 23px var(--serif);
+      color:var(--forest);
+    }
+
+    .journey p {
+      max-width:400px;
+      margin-top:8px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.75;
+    }
+
+    .journey .arrow {
+      position:absolute;
+      right:24px;
+      bottom:24px;
+      color:var(--gold);
+    }
+
+    /* AI COMPANION */
+
+    .companion {
+      background:#edf0e8;
+    }
+
+    .companion-layout {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:70px;
+      align-items:center;
+    }
+
+    .companion-copy h2 {
+      max-width:500px;
+    }
+
+    .companion-copy>p {
+      margin-top:18px;
+      color:var(--muted);
+      font-size:15px;
+      line-height:1.85;
+    }
+
+    .features {
+      display:grid;
+      gap:19px;
+      margin-top:30px;
+    }
+
+    .feature {
+      display:flex;
+      gap:13px;
+      align-items:flex-start;
+    }
+
+    .feature i {
+      flex:none;
+      width:38px;
+      height:38px;
+      display:grid;
+      place-items:center;
+      border-radius:10px;
+      background:#dce6da;
+      color:var(--forest);
+    }
+
+    .feature strong {
+      display:block;
+      color:var(--forest);
+      font-size:13px;
+    }
+
+    .feature span {
+      display:block;
+      margin-top:3px;
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+    }
+
+    .chat {
+      padding:25px;
+      border:1px solid #dce1d7;
+      border-radius:14px;
+      background:var(--white);
+      box-shadow:0 18px 45px rgba(24,48,36,.07);
+    }
+
+    .chat-head {
+      display:flex;
+      gap:12px;
+      align-items:center;
+      padding-bottom:17px;
+      border-bottom:1px solid var(--line);
+    }
+
+    .chat-head .avatar {
+      width:40px;
+      height:40px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:var(--forest);
+      color:#e6d4aa;
+    }
+
+    .chat-head strong {
+      display:block;
+      color:var(--forest);
+      font:500 17px var(--serif);
+    }
+
+    .chat-head small {
+      color:var(--muted);
+      font-size:11px;
+    }
+
+    .bubble {
+      max-width:88%;
+      margin-top:16px;
+      padding:13px 15px;
+      border-radius:12px;
+      background:#f0f1eb;
+      color:#59635a;
+      font-size:12px;
+      line-height:1.75;
+    }
+
+    .bubble.reply {
+      margin-left:auto;
+      background:var(--forest);
+      color:white;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding:45px 0;
+      background:var(--forest-deep);
+      color:#d5dfd5;
+    }
+
+    .footer-inner {
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:25px;
+    }
+
+    footer .brand strong {
+      color:white;
+    }
+
+    footer .brand small {
+      color:#d5b779;
+    }
+
+    footer p {
+      font-size:11px;
+      color:#aebdb0;
+    }
+
+    .footer-links {
+      display:flex;
+      gap:22px;
+      font-size:11px;
+      color:#d5dfd5;
+    }
+
+    .footer-links a:hover {
+      color:white;
+    }
+
+    /* ANIMATIONS */
+
+    .reveal {
+      opacity:0;
+      transform:translateY(18px);
+      transition:opacity .7s ease,transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity:1;
+      transform:none;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:900px) {
+      .navlinks {
+        gap:17px;
+      }
+
+      .hero {
+        grid-template-columns:1fr .8fr;
+        gap:20px;
+      }
+
+      .verse-card {
+        width:275px;
+        min-height:365px;
+      }
+
+      .floating {
+        right:-10px;
+      }
+
+      .companion-layout {
+        gap:35px;
+      }
+    }
+
+    @media(max-width:700px) {
+      .wrap {
+        width:calc(100% - 36px);
+      }
+
+      .nav {
+        height:68px;
+      }
+
+      .navlinks {
+        display:none;
+        position:absolute;
+        top:68px;
+        left:18px;
+        right:18px;
+        padding:16px;
+        background:var(--white);
+        border:1px solid var(--line);
+        border-radius:12px;
+        flex-direction:column;
+        align-items:flex-start;
+        box-shadow:var(--shadow);
+      }
+
+      .navlinks.open {
+        display:flex;
+      }
+
+      .menu {
+        display:block;
+      }
+
+      .hero {
+        grid-template-columns:1fr;
+        padding:65px 0 55px;
+        gap:10px;
+        min-height:0;
+      }
+
+      h1 {
+        font-size:clamp(45px,12vw,64px);
+      }
+
+      .hero-art {
+        min-height:440px;
+        margin-top:8px;
+      }
+
+      .verse-card {
+        width:270px;
+        min-height:350px;
+      }
+
+      .floating {
+        right:0;
+        bottom:34px;
+      }
+
+      .band-inner {
+        display:grid;
+        grid-template-columns:1fr 1fr;
+        gap:15px;
+      }
+
+      .band-inner span {
+        font-size:10px;
+      }
+
+      section.block {
+        padding:76px 0;
+      }
+
+      .feeling-grid {
+        grid-template-columns:1fr 1fr;
+        gap:10px;
+      }
+
+      .feeling-card {
+        padding:18px;
+      }
+
+      .feeling-card h3 {
+        font-size:18px;
+      }
+
+      .steps {
+        grid-template-columns:1fr;
+        gap:8px;
+      }
+
+      .step {
+        padding:20px 5px;
+      }
+
+      .journey-grid {
+        grid-template-columns:1fr;
+      }
+
+      .journey {
+        min-height:190px;
+      }
+
+      .companion-layout {
+        grid-template-columns:1fr;
+        gap:35px;
+      }
+
+      .scripture {
+        padding:78px 20px;
+      }
+
+      .footer-inner {
+        align-items:flex-start;
+        flex-direction:column;
+      }
+
+      .footer-links {
+        flex-wrap:wrap;
+      }
+    }
+
+    @media(max-width:390px) {
+      .feeling-grid {
+        grid-template-columns:1fr;
+      }
+
+      .hero-art {
+        min-height:410px;
+      }
+
+      .verse-card {
+        width:250px;
+        min-height:330px;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      html {
+        scroll-behavior:auto;
+      }
+
+      *,
+      *:before,
+      *:after {
+        transition:none!important;
+        animation:none!important;
+      }
+
+      .reveal {
+        opacity:1;
+        transform:none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="topbar">
+    <div class="wrap nav">
+
+      <a class="brand" href="#" aria-label="Hope and Heaven home">
+        <img src="logo3.png" alt="Hope & Heaven logo">
+        <span>
+          <strong>Hope & Heaven</strong>
+          <small>BY ASHER</small>
+        </span>
+      </a>
+
+      <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+        <a href="#experience">The experience</a>
+        <a href="#journeys">Prayer journeys</a>
+        <a href="#companion">AI companion</a>
+        <a href="#purpose">Our purpose</a>
+      </nav>
+
+      <button class="menu" id="menu" aria-label="Toggle navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="wrap hero">
+
+      <div class="hero-copy">
+
+        <div class="kicker reveal">
+          A little closer to God
+        </div>
+
+        <h1 class="reveal">
+          Meet every season of life with <em>hope.</em>
+        </h1>
+
+        <p class="reveal">
+          Some days, faith comes easily. Other days, you just need a quiet place to begin again. Find comfort in Scripture, gentle reflection and moments that bring your heart closer to God.
+        </p>
+
+        <div class="hero-actions reveal">
+          <a class="login" href="/app/login">
+            Log in to Hope & Heaven
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="hero-caption reveal">
+          A personal space for Scripture, prayer and everyday life.
+        </div>
+
+      </div>
+
+      <div class="hero-art reveal" aria-label="A Bible verse about finding rest">
+
+        <div class="art-orbit"></div>
+
+        <div class="verse-card">
+          <small>A moment of peace</small>
+
+          <blockquote>
+            “Come to me, all you who are weary and burdened, and I will give you rest.”
+          </blockquote>
+
+          <cite>Matthew 11:28</cite>
+        </div>
+
+        <div class="floating">
+          <i class="fa-solid fa-sun"></i>
+          You can begin right where you are.
+        </div>
+
+      </div>
+    </section>
+
+    <!-- TRUST BAND -->
+    <section class="intro-band">
+      <div class="wrap band-inner">
+
+        <span>
+          <i class="fa-solid fa-book-bible"></i>
+          Rooted in Scripture
+        </span>
+
+        <span>
+          <i class="fa-solid fa-heart"></i>
+          Made for real feelings
+        </span>
+
+        <span>
+          <i class="fa-solid fa-hands-praying"></i>
+          Gentle prayer journeys
+        </span>
+
+        <span>
+          <i class="fa-solid fa-seedling"></i>
+          Grow at your own pace
+        </span>
+
+      </div>
+    </section>
+
+    <!-- FEELINGS -->
+    <section class="block feelings" id="experience">
+
+      <div class="wrap">
+
+        <div class="section-head reveal">
+
+          <div class="kicker">Start where you are</div>
+
+          <h2>Your feelings have a place here.</h2>
+
+          <p>
+            You don't need to know where to begin. Explore Scripture through the emotions and moments you're experiencing today.
+          </p>
+
+        </div>
+
+        <div class="feeling-grid">
+
+          <article class="feeling-card reveal">
+            <div class="ico">
+              <i class="fa-solid fa-cloud-rain"></i>
+            </div>
+            <h3>When you're sad</h3>
+            <p>Find comfort in God's presence when life feels heavy and your heart needs healing.</p>
+          </article>
+
+          <article class="feeling-card reveal">
+            <div class="ico">
+              <i class="fa-solid fa-cloud"></i>
+            </div>
+            <h3>When you're anxious</h3>
+            <p>Discover words of peace when tomorrow feels uncertain and your mind won't rest.</p>
+          </article>
+
+          <article class="feeling-card reveal">
+            <div class="ico">
+              <i class="fa-solid fa-fire"></i>
+            </div>
+            <h3>When you're angry</h3>
+            <p>Find patience, understanding and guidance when emotions become difficult to manage.</p>
+          </article>
+
+          <article class="feeling-card reveal">
+            <div class="ico">
+              <i class="fa-solid fa-heart"></i>
+            </div>
+            <h3>When you're grateful</h3>
+            <p>Pause to appreciate your blessings and grow a heart of gratitude.</p>
+          </article>
+
+          <article class="feeling-card reveal">
+            <div class="ico">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h3>When you feel distant</h3>
+            <p>Reconnect with your faith, even when prayer feels difficult.</p>
+          </article>
+
+          <article class="feeling-card reveal">
+            <div class="ico">
+              <i class="fa-solid fa-hands-praying"></i>
+            </div>
+            <h3>When you're struggling</h3>
+            <p>Find strength to face temptation and make choices that bring you closer to God.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="block how">
+
+      <div class="wrap">
+
+        <div class="section-head reveal">
+          <div class="kicker">A simpler way to connect</div>
+
+          <h2>Small moments. A deeper connection.</h2>
+
+          <p>
+            No pressure to have everything figured out. Just a simple way to spend meaningful moments with God.
+          </p>
+        </div>
+
+        <div class="steps">
+
+          <article class="step reveal">
+            <div class="step-no">01</div>
+            <h3>Share how you feel</h3>
+            <p>Choose an emotion or situation that reflects what's happening in your life right now.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step-no">02</div>
+            <h3>Discover His Word</h3>
+            <p>Explore Bible verses and reflections connected to what you're going through.</p>
+          </article>
+
+          <article class="step reveal">
+            <div class="step-no">03</div>
+            <h3>Take a moment with God</h3>
+            <p>Reflect, pray and carry a little more faith and hope into the rest of your day.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SCRIPTURE -->
+    <section class="scripture">
+
+      <div class="kicker">His word, your comfort</div>
+
+      <blockquote>
+        “The Lord is close to the brokenhearted and saves those who are crushed in spirit.”
+      </blockquote>
+
+      <cite>Psalm 34:18</cite>
+
+    </section>
+
+    <!-- JOURNEYS -->
+    <section class="block journeys" id="journeys">
+
+      <div class="wrap">
+
+        <div class="section-head reveal">
+          <div class="kicker">Walk with God</div>
+
+          <h2>Guidance for the season you're in.</h2>
+
+          <p>
+            Some seasons call for more than a single verse. Find gentle, guided moments to help you keep going, one day at a time.
+          </p>
+        </div>
+
+        <div class="journey-grid">
+
+          <article class="journey reveal">
+            <div class="ico">
+              <i class="fa-solid fa-moon"></i>
+            </div>
+            <h3>Sleep in Scripture</h3>
+            <p>End your day with peaceful readings, gentle prayers and reminders of God's presence.</p>
+            <span class="arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </article>
+
+          <article class="journey reveal">
+            <div class="ico">
+              <i class="fa-solid fa-dove"></i>
+            </div>
+            <h3>Walking Through Grief</h3>
+            <p>A gentle journey through loss, healing and finding comfort in God's everlasting love.</p>
+            <span class="arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </article>
+
+          <article class="journey reveal">
+            <div class="ico">
+              <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+            <h3>Anxiety Reset</h3>
+            <p>Let go of overwhelming thoughts and rediscover peace through Scripture and prayer.</p>
+            <span class="arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </article>
+
+          <article class="journey reveal">
+            <div class="ico">
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h3>Advent &amp; Lent</h3>
+            <p>Prepare your heart through meaningful reflections and guided moments of faith.</p>
+            <span class="arrow">
+              <i class="fa-solid fa-arrow-right"></i>
+            </span>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- AI COMPANION -->
+    <section class="block companion" id="companion">
+
+      <div class="wrap companion-layout">
+
+        <div class="companion-copy reveal">
+
+          <div class="kicker">A companion for your faith</div>
+
+          <h2>It's okay to have questions.</h2>
+
+          <p>
+            Faith doesn't mean having every answer. Explore your questions, understand Scripture and make space for thoughtful reflection grounded in God's Word.
+          </p>
+
+          <div class="features">
+
+            <div class="feature">
+              <i class="fa-solid fa-book-open"></i>
+              <div>
+                <strong>Explore Scripture</strong>
+                <span>Understand Bible passages and discover their meaning.</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <i class="fa-solid fa-comments"></i>
+              <div>
+                <strong>Ask what's on your mind</strong>
+                <span>Have thoughtful conversations about faith and life.</span>
+              </div>
+            </div>
+
+            <div class="feature">
+              <i class="fa-solid fa-heart"></i>
+              <div>
+                <strong>Reflect with purpose</strong>
+                <span>Find questions and reflections to deepen your understanding.</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="chat reveal">
+
+          <div class="chat-head">
+            <div class="avatar">
+              <i class="fa-solid fa-book-bible"></i>
+            </div>
+
+            <div>
+              <strong>Faith Conversations</strong>
+              <small>A space to explore your questions</small>
+            </div>
+          </div>
+
+          <div class="bubble">
+            I've been feeling distant from God lately. I don't even know how to pray anymore.
+          </div>
+
+          <div class="bubble reply">
+            You don't need perfect words to reach out to God. Even a quiet moment can become a prayer.
+            <br><strong>Romans 8:26</strong>
+          </div>
+
+          <div class="bubble">
+            So I can still come to Him, even when I don't know what to say?
+          </div>
+
+          <div class="bubble reply">
+            Absolutely. You can begin exactly where you are.
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer id="purpose">
+
+    <div class="wrap footer-inner">
+
+      <a class="brand" href="#">
+        <img src="logo3.png" alt="Hope & Heaven logo">
+        <span>
+          <strong>Hope &amp; Heaven</strong>
+          <small>BY ASHER</small>
+        </span>
+      </a>
+
+      <p>
+        A gentle space to find comfort, strength and hope through God's Word.
+      </p>
+
+      <div class="footer-links">
+        <a href="#experience">Experience</a>
+        <a href="#journeys">Journeys</a>
+        <a href="#companion">AI Companion</a>
+        <a href="mailto:support@asher.com">Contact</a>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Mobile navigation
+    const menu = document.getElementById('menu');
+    const navlinks = document.getElementById('navlinks');
+
+    menu.addEventListener('click', () => {
+      const open = navlinks.classList.toggle('open');
+
+      menu.setAttribute('aria-expanded', String(open));
+
+      menu.innerHTML = open
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    navlinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navlinks.classList.remove('open');
+
+        menu.setAttribute('aria-expanded', 'false');
+
+        menu.innerHTML = '<i class="fa-solid fa-bars"></i>';
+      });
+    });
+
+    // Scroll reveal animations
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.12
+    });
+
+    document.querySelectorAll('.reveal').forEach(element => {
+      observer.observe(element);
+    });
+  </script>
+
+</body>
+</html>
