@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Hope & Heaven is a Christ-centred space to explore Scripture, find comfort, pray and grow in faith through every season of life.">
+  <meta name="theme-color" content="#f5f3ed">
+  <title>Hope & Heaven — Find hope for every season</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <style>
+    :root{--ink:#172a23;--forest:#214d3c;--deep:#132f25;--paper:#f5f3ed;--white:#fffefa;--muted:#72796f;--line:#e4e4d9;--gold:#c59a55;--gold-pale:#efe2c6;--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",sans-serif;--display:"Manrope",sans-serif;--shadow:0 20px 55px rgba(19,47,37,.13)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:88px}
+    body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    img{display:block;max-width:100%}a{color:inherit;text-decoration:none}button{font:inherit}
+    .wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+    .topbar{position:sticky;top:0;z-index:50;background:rgba(245,243,237,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(228,228,217,.85)}
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:10px;flex:none}
+    .brand img{width:48px;height:42px;object-fit:contain}
+    .brand strong{display:block;color:var(--deep);font:600 19px var(--serif)}
+    .brand small{display:block;color:var(--gold);font:700 8px var(--display);letter-spacing:2px}
+    .navlinks{display:flex;align-items:center;gap:28px;color:#657067;font-size:12px;font-weight:600}
+    .navlinks a:hover{color:var(--forest)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .nav-login,.nav-start{padding:10px 17px;border-radius:7px;font-size:11px;font-weight:700}
+    .nav-login{border:1px solid #c9c9b9}
+    .nav-start{background:var(--deep);color:white}
+    .menu{display:none;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:var(--white);color:var(--forest)}
+    .hero{position:relative;min-height:590px;display:grid;grid-template-columns:1fr 1fr;align-items:center;overflow:hidden;background:var(--paper)}
+    .hero-copy{position:relative;z-index:3;width:min(580px,100%);padding:75px 20px 78px max(24px,calc((100vw - 1160px)/2))}
+    .kicker{display:inline-flex;align-items:center;gap:10px;color:#a77a35;font:800 9px var(--display);letter-spacing:2.6px;text-transform:uppercase}
+    .kicker:before{content:"";width:26px;height:1px;background:var(--gold)}
+    h1{max-width:600px;margin-top:24px;color:var(--deep);font:500 clamp(48px,5.7vw,74px)/1.06 var(--serif);letter-spacing:-2.3px}
+    h1 em{color:#a77a35;font-weight:400}
+    .hero-copy>p{max-width:475px;margin-top:22px;color:#687269;font-size:15px;line-height:1.9}
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:11px;padding:14px 21px;border-radius:7px;font-size:12px;font-weight:700;transition:.25s}
+    .btn-primary{background:var(--forest);color:white;box-shadow:0 10px 24px rgba(33,77,60,.17)}
+    .btn-primary:hover{background:var(--deep);transform:translateY(-2px)}
+    .btn-outline{border:1px solid #bca77e;color:var(--deep);background:rgba(255,254,250,.6)}
+    .hero-proof{display:flex;align-items:center;gap:12px;margin-top:28px;color:#778075;font-size:10px}
+    .proof-icons{display:flex;padding-left:5px}
+    .proof-icons span{width:27px;height:27px;margin-left:-5px;border:2px solid var(--paper);border-radius:50%;display:grid;place-items:center;background:#d9dfd1;color:var(--forest);font-size:9px}
+    .hero-visual{position:relative;min-height:590px;overflow:hidden}
+    .hero-visual img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:35% center}
+    .hero-visual:before{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,var(--paper) 0%,rgba(245,243,237,.55) 12%,rgba(245,243,237,0) 43%),linear-gradient(0deg,rgba(19,47,37,.12),transparent 35%)}
+    .hero-image-caption{position:absolute;z-index:2;right:28px;bottom:25px;padding:12px 16px;border:1px solid rgba(255,255,255,.45);border-radius:8px;background:rgba(255,254,250,.82);backdrop-filter:blur(10px);color:var(--forest);font:500 12px var(--serif)}
+    .benefits{position:relative;z-index:4;margin:-1px auto 0;padding:23px 0;background:#fbf8f0;border-top:1px solid #e9e2d3;border-bottom:1px solid #e9e2d3}
+    .benefit-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .benefit{display:flex;align-items:center;gap:13px;padding:8px 20px;border-right:1px solid #ded7c8}
+    .benefit:first-child{padding-left:0}.benefit:last-child{border:0}
+    .benefit i{width:36px;flex:none;color:#a8792e;font-size:22px;text-align:center}
+    .benefit strong{display:block;color:var(--deep);font:500 15px var(--serif)}
+    .benefit span{display:block;margin-top:3px;color:var(--muted);font-size:10px;line-height:1.5}
+    section.block{padding:88px 0}
+    .section-head{max-width:680px;margin:0 auto 38px;text-align:center}
+    .section-head .kicker{justify-content:center}
+    h2{margin-top:14px;color:var(--deep);font:500 clamp(32px,3.8vw,47px)/1.15 var(--serif);letter-spacing:-.8px}
+    .section-head p{max-width:570px;margin:13px auto 0;color:var(--muted);font-size:14px;line-height:1.8}
+    .feelings{background:var(--white)}
+    .feeling-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+    .feeling-card{overflow:hidden;border:1px solid var(--line);border-radius:12px;background:#fff;transition:.25s}
+    .feeling-card:hover,.journey:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+    .feeling-card img{width:100%;height:190px;object-fit:cover}
+    .feeling-card-body{padding:19px 20px 21px}
+    .feeling-card h3{color:var(--forest);font:500 21px var(--serif)}
+    .feeling-card p{margin-top:7px;color:var(--muted);font-size:12px;line-height:1.7}
+    .how{background:var(--paper)}
+    .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+    .step{padding:23px 20px;border-top:1px solid #d9d8ca}
+    .step-no{color:var(--gold);font:500 34px var(--serif)}
+    .step h3{margin-top:15px;color:var(--forest);font:500 21px var(--serif)}
+    .step p{margin-top:8px;color:var(--muted);font-size:12px;line-height:1.8}
+    .scripture{position:relative;min-height:330px;display:grid;grid-template-columns:1fr 1fr;align-items:center;overflow:hidden;background:var(--deep);color:white}
+    .scripture-image{height:100%;min-height:330px}
+    .scripture-image img{width:100%;height:100%;min-height:330px;object-fit:cover}
+    .scripture-copy{padding:42px clamp(25px,5vw,70px);text-align:center}
+    .scripture-copy .kicker{color:#e4c98f;justify-content:center}
+    .scripture blockquote{margin:20px auto 0;color:#fffefa;font:italic 400 clamp(25px,3vw,36px)/1.45 var(--serif)}
+    .scripture cite{display:block;margin-top:18px;color:#e5cb97;font:700 9px var(--display);letter-spacing:2px;font-style:normal}
+    .journeys{background:#f0f1e9}
+    .journey-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .journey{overflow:hidden;border:1px solid #e1e2d8;border-radius:12px;background:#fffefa;transition:.25s}
+    .journey img{width:100%;height:205px;object-fit:cover}
+    .journey-body{padding:18px 20px 20px}
+    .journey h3{color:var(--forest);font:500 21px var(--serif)}
+    .journey p{margin-top:7px;color:var(--muted);font-size:12px;line-height:1.7}
+    .journey-link{display:inline-flex;align-items:center;gap:8px;margin-top:14px;color:#946b2f;font-size:11px;font-weight:700}
+    .community{display:grid;grid-template-columns:.85fr 1.15fr;align-items:center;min-height:350px;background:var(--white)}
+    .community-copy{padding:50px max(24px,calc((100vw - 1160px)/2))}
+    .community-copy p{max-width:410px;margin-top:15px;color:var(--muted);font-size:14px;line-height:1.8}
+    .community-image{height:350px}
+    .community-image img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+    .companion{background:#e9eee6}
+    .companion-layout{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+    .companion-copy>p{margin-top:16px;color:var(--muted);font-size:14px;line-height:1.85}
+    .features{display:grid;gap:17px;margin-top:25px}
+    .feature{display:flex;gap:12px;align-items:flex-start}
+    .feature i{width:36px;height:36px;flex:none;display:grid;place-items:center;border-radius:9px;background:#dce6da;color:var(--forest)}
+    .feature strong{display:block;color:var(--forest);font-size:12px}
+    .feature span{display:block;margin-top:3px;color:var(--muted);font-size:11px;line-height:1.6}
+    .chat{padding:24px;border:1px solid #dce1d7;border-radius:14px;background:var(--white);box-shadow:0 18px 45px rgba(24,48,36,.07)}
+    .chat-head{display:flex;gap:12px;align-items:center;padding-bottom:15px;border-bottom:1px solid var(--line)}
+    .avatar{width:39px;height:39px;display:grid;place-items:center;border-radius:50%;background:var(--forest);color:#e6d4aa}
+    .chat-head strong{display:block;color:var(--forest);font:500 16px var(--serif)}
+    .chat-head small{color:var(--muted);font-size:10px}
+    .bubble{max-width:88%;margin-top:15px;padding:12px 14px;border-radius:12px;background:#f0f1eb;color:#59635a;font-size:11px;line-height:1.75}
+    .bubble.reply{margin-left:auto;background:var(--forest);color:white}
+    .closing{position:relative;overflow:hidden;min-height:330px;display:grid;grid-template-columns:1fr 1fr;align-items:center;background:var(--deep);color:white}
+    .closing-image{height:100%;min-height:330px}
+    .closing-image img{width:100%;height:100%;min-height:330px;object-fit:cover}
+    .closing-copy{padding:45px clamp(25px,5vw,65px)}
+    .closing-copy .kicker{color:#e6c98c}
+    .closing-copy h2{color:#fffefa}
+    .closing-copy p{margin-top:12px;color:#d6dfd5;font-size:13px;line-height:1.8}
+    footer{padding:30px 0;background:#0f291f;color:#d5dfd5}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:22px}
+    footer .brand strong{color:white}footer .brand small{color:#d5b779}
+    footer p{color:#aebdb0;font-size:10px}
+    .footer-links{display:flex;flex-wrap:wrap;gap:18px;color:#d5dfd5;font-size:10px}
+    .reveal{opacity:0;transform:translateY(16px);transition:opacity .65s ease,transform .65s ease}
+    .reveal.visible{opacity:1;transform:none}
+    @media(max-width:950px){
+      .navlinks{gap:15px}.hero{min-height:540px}.hero-copy{padding-left:24px}.hero-visual{min-height:540px}
+      .benefit{padding:8px 11px;gap:8px}.benefit strong{font-size:13px}
+      .community-copy{padding:35px 24px}
+    }
+    @media(max-width:700px){
+      .wrap{width:calc(100% - 36px)}.nav{height:68px}.brand img{width:42px;height:38px}
+      .navlinks{display:none;position:absolute;top:68px;left:18px;right:18px;padding:17px;background:var(--white);border:1px solid var(--line);border-radius:12px;flex-direction:column;align-items:flex-start;gap:16px;box-shadow:var(--shadow)}
+      .navlinks.open{display:flex}.nav-actions{margin-left:auto}.nav-login{display:none}.nav-start{padding:9px 12px}.menu{display:block}
+      .hero{grid-template-columns:1fr;min-height:0}.hero-copy{width:100%;padding:55px 22px 28px}.hero-copy>p{font-size:14px}
+      h1{font-size:clamp(43px,11vw,61px)}.hero-visual{min-height:390px}.hero-visual img{object-position:42% center}
+      .hero-visual:before{background:linear-gradient(0deg,rgba(19,47,37,.2),transparent 50%),linear-gradient(180deg,var(--paper) 0%,rgba(245,243,237,0) 25%)}
+      .hero-image-caption{right:15px;bottom:15px}
+      .benefit-grid{grid-template-columns:1fr 1fr;row-gap:14px}.benefit{border-right:0;padding:8px 4px}.benefit:nth-child(odd){border-right:1px solid #ded7c8}
+      section.block{padding:68px 0}.feeling-grid{grid-template-columns:1fr 1fr;gap:10px}.feeling-card img{height:145px}.feeling-card-body{padding:14px}
+      .feeling-card h3{font-size:17px}.feeling-card p{font-size:11px}
+      .steps{grid-template-columns:1fr;gap:8px}.step{padding:18px 5px}
+      .scripture{grid-template-columns:1fr}.scripture-image{min-height:220px;height:220px}.scripture-image img{min-height:220px}
+      .scripture-copy{padding:42px 22px}
+      .journey-grid{grid-template-columns:1fr 1fr}.journey img{height:140px}.journey-body{padding:13px}.journey h3{font-size:17px}.journey p{font-size:11px}
+      .community{grid-template-columns:1fr}.community-copy{padding:55px 22px}.community-image{height:260px;min-height:260px}
+      .companion-layout{grid-template-columns:1fr;gap:30px}.chat{padding:18px}
+      .closing{grid-template-columns:1fr}.closing-image{height:230px;min-height:230px;order:2}.closing-copy{padding:48px 24px;order:1}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+    }
+    @media(max-width:390px){
+      .nav-start{font-size:10px}.hero-copy{padding-inline:18px}.hero-visual{min-height:330px}
+      .benefit-grid{grid-template-columns:1fr}.benefit,.benefit:nth-child(odd){border-right:0;border-bottom:1px solid #ded7c8;padding:9px 0}
+      .benefit:last-child{border-bottom:0}
+      .feeling-grid,.journey-grid{grid-template-columns:1fr}.feeling-card img{height:180px}.journey img{height:190px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}}
+
+    /* =====================================================
+       HOPE & HEAVEN — REFINED VISUAL SYSTEM
+       Keeps the existing image assets and brand palette.
+    ===================================================== */
+    :root {
+      --ink: #1d2922;
+      --forest: #174735;
+      --deep: #102f24;
+      --paper: #f6f4ec;
+      --white: #fffdf8;
+      --muted: #747a70;
+      --line: #e7e3d8;
+      --gold: #b99152;
+      --gold-soft: #e9ddc4;
+      --shadow-soft: 0 12px 35px rgba(24, 51, 38, .07);
+      --shadow-card: 0 18px 42px rgba(24, 51, 38, .10);
+    }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      letter-spacing: -.01em;
+    }
+
+    .wrap {
+      width: min(1180px, calc(100% - 64px));
+    }
+
+    .topbar {
+      background: rgba(246,244,236,.96);
+      border-bottom: 1px solid rgba(23,71,53,.09);
+      backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      height: 82px;
+    }
+
+    .brand {
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 45px;
+      height: 45px;
+    }
+
+    .brand strong {
+      font-size: 20px;
+      letter-spacing: -.45px;
+    }
+
+    .brand small {
+      color: var(--gold);
+      letter-spacing: 2.5px;
+    }
+
+    .navlinks {
+      gap: 32px;
+      color: #68736a;
+      font-size: 12px;
+    }
+
+    .navlinks a {
+      position: relative;
+      padding: 9px 0;
+      transition: color .2s ease;
+    }
+
+    .navlinks a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 2px;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width .2s ease;
+    }
+
+    .navlinks a:hover::after {
+      width: 100%;
+    }
+
+    .nav-login,
+    .nav-start {
+      padding: 11px 19px;
+      border-radius: 5px;
+      font-size: 11px;
+      transition: .2s ease;
+    }
+
+    .nav-login {
+      border-color: #c9cbbf;
+      color: var(--forest);
+    }
+
+    .nav-start {
+      background: var(--forest);
+    }
+
+    .nav-start:hover {
+      background: var(--deep);
+      transform: translateY(-1px);
+    }
+
+    /* Hero: cleaner editorial split, image remains unchanged */
+    .hero {
+      min-height: 620px;
+      grid-template-columns: 1.02fr .98fr;
+      background: var(--paper);
+    }
+
+    .hero-copy {
+      width: min(640px, 100%);
+      padding-top: 82px;
+      padding-bottom: 85px;
+    }
+
+    .kicker {
+      color: #98723c;
+      font-size: 9px;
+      letter-spacing: 2.4px;
+    }
+
+    .kicker:before {
+      width: 30px;
+      background: var(--gold);
+    }
+
+    h1 {
+      max-width: 620px;
+      margin-top: 27px;
+      color: var(--deep);
+      font-size: clamp(52px, 5.5vw, 76px);
+      line-height: 1.04;
+      letter-spacing: -2.8px;
+    }
+
+    h1 em {
+      color: var(--gold);
+    }
+
+    .hero-copy > p {
+      max-width: 465px;
+      margin-top: 25px;
+      color: #68736a;
+      font-size: 14px;
+      line-height: 1.95;
+    }
+
+    .hero-actions {
+      gap: 13px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      min-height: 48px;
+      padding: 14px 21px;
+      border-radius: 5px;
+      font-size: 11px;
+      letter-spacing: .01em;
+    }
+
+    .btn-primary {
+      background: var(--forest);
+      box-shadow: none;
+    }
+
+    .btn-primary:hover {
+      background: var(--deep);
+      box-shadow: 0 9px 22px rgba(16,47,36,.14);
+    }
+
+    .btn-outline {
+      border-color: #c8b58f;
+      background: transparent;
+      color: var(--forest);
+    }
+
+    .btn-outline:hover {
+      background: #eee9dc;
+    }
+
+    .hero-proof {
+      margin-top: 34px;
+      color: #737c72;
+      font-size: 10px;
+    }
+
+    .proof-icons span {
+      background: #e8ebdf;
+      color: var(--forest);
+    }
+
+    .hero-visual {
+      min-height: 620px;
+      margin: 20px 20px 20px 0;
+      border-radius: 220px 8px 8px 8px;
+      isolation: isolate;
+    }
+
+    .hero-visual img {
+      border-radius: inherit;
+      object-position: 38% center;
+    }
+
+    .hero-visual:before {
+      background: linear-gradient(90deg, var(--paper) 0%, rgba(246,244,236,.25) 14%, transparent 38%);
+    }
+
+    .hero-image-caption {
+      right: 24px;
+      bottom: 24px;
+      padding: 13px 17px;
+      border: 1px solid rgba(255,253,248,.7);
+      border-radius: 5px;
+      background: rgba(255,253,248,.92);
+      color: var(--forest);
+      box-shadow: var(--shadow-soft);
+      font-size: 12px;
+    }
+
+    /* Trust / benefits strip */
+    .benefits {
+      padding: 25px 0;
+      background: #eeeee4;
+      border: 0;
+    }
+
+    .benefit {
+      gap: 14px;
+      padding: 9px 22px;
+      border-color: #d9d9cc;
+    }
+
+    .benefit i {
+      color: var(--gold);
+      font-size: 19px;
+    }
+
+    .benefit strong {
+      color: var(--forest);
+      font-size: 14px;
+    }
+
+    .benefit span {
+      color: #7b8177;
+      font-size: 10px;
+    }
+
+    /* Consistent section rhythm */
+    section.block {
+      padding: 100px 0;
+    }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 48px;
+    }
+
+    .section-head h2,
+    h2 {
+      color: var(--deep);
+      font-size: clamp(34px, 3.5vw, 46px);
+      line-height: 1.16;
+      letter-spacing: -1.2px;
+    }
+
+    .section-head p {
+      max-width: 570px;
+      margin-top: 16px;
+      color: #737b71;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .feelings {
+      background: var(--white);
+    }
+
+    .feeling-grid {
+      gap: 18px;
+    }
+
+    .feeling-card {
+      border: 1px solid #e9e6dc;
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 3px 12px rgba(24,51,38,.025);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+    }
+
+    .feeling-card:hover {
+      transform: translateY(-5px);
+      border-color: #d6d2c2;
+      box-shadow: var(--shadow-card);
+    }
+
+    .feeling-card img {
+      height: 215px;
+      object-fit: cover;
+    }
+
+    .feeling-card-body {
+      padding: 22px 22px 24px;
+    }
+
+    .feeling-card h3 {
+      color: var(--forest);
+      font-size: 21px;
+      letter-spacing: -.3px;
+    }
+
+    .feeling-card p {
+      color: #747b72;
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    /* How it works */
+    .how {
+      background: #f0efe7;
+    }
+
+    .steps {
+      gap: 24px;
+    }
+
+    .step {
+      padding: 25px 22px;
+      border-top: 1px solid #d6d4c7;
+    }
+
+    .step-no {
+      color: var(--gold);
+      font-size: 38px;
+    }
+
+    .step h3 {
+      margin-top: 18px;
+      color: var(--forest);
+      font-size: 22px;
+    }
+
+    .step p {
+      color: #747b72;
+      font-size: 12px;
+      line-height: 1.85;
+    }
+
+    /* Scripture feature */
+    .scripture {
+      min-height: 370px;
+      background: var(--deep);
+    }
+
+    .scripture-image,
+    .scripture-image img {
+      min-height: 370px;
+    }
+
+    .scripture-image img {
+      object-position: center;
+    }
+
+    .scripture-copy {
+      padding: 50px clamp(28px, 5vw, 78px);
+    }
+
+    .scripture blockquote {
+      max-width: 510px;
+      font-size: clamp(27px, 3vw, 38px);
+      line-height: 1.42;
+    }
+
+    .scripture cite {
+      color: #d8bd87;
+      font-size: 9px;
+    }
+
+    /* Journeys: image-led editorial cards */
+    .journeys {
+      background: #eeefe7;
+    }
+
+    .journey-grid {
+      gap: 18px;
+    }
+
+    .journey {
+      border: 1px solid #e2e2d8;
+      border-radius: 8px;
+      background: var(--white);
+      box-shadow: 0 4px 14px rgba(24,51,38,.035);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .journey img {
+      height: 225px;
+      object-fit: cover;
+    }
+
+    .journey-body {
+      padding: 21px 22px 23px;
+    }
+
+    .journey h3 {
+      color: var(--forest);
+      font-size: 21px;
+    }
+
+    .journey p {
+      color: #747b72;
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .journey-link {
+      color: #98723c;
+      font-size: 10px;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    /* Community image */
+    .community {
+      min-height: 410px;
+      grid-template-columns: .9fr 1.1fr;
+      background: var(--white);
+    }
+
+    .community-copy {
+      padding: 60px max(32px, calc((100vw - 1160px)/2));
+    }
+
+    .community-copy h2 {
+      max-width: 440px;
+      margin-top: 17px;
+    }
+
+    .community-copy p {
+      color: #737b71;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .community-image {
+      height: 410px;
+    }
+
+    .community-image img {
+      object-position: center 42%;
+    }
+
+    /* AI companion */
+    .companion {
+      background: #e9ede5;
+    }
+
+    .companion-layout {
+      gap: 70px;
+    }
+
+    .companion-copy h2 {
+      max-width: 500px;
+      margin-top: 16px;
+    }
+
+    .companion-copy > p {
+      color: #70796f;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    .feature i {
+      border-radius: 7px;
+      background: #dce4d8;
+      color: var(--forest);
+    }
+
+    .feature strong {
+      color: var(--forest);
+      font-size: 12px;
+    }
+
+    .chat {
+      border: 1px solid #dce1d7;
+      border-radius: 9px;
+      box-shadow: 0 15px 38px rgba(24,48,36,.06);
+    }
+
+    .chat-head strong {
+      color: var(--forest);
+    }
+
+    .bubble {
+      border-radius: 8px;
+      font-size: 11px;
+    }
+
+    .bubble.reply {
+      background: var(--forest);
+    }
+
+    /* Closing call to action */
+    .closing {
+      min-height: 370px;
+      background: var(--deep);
+    }
+
+    .closing-image,
+    .closing-image img {
+      min-height: 370px;
+    }
+
+    .closing-copy {
+      padding: 55px clamp(28px, 5vw, 75px);
+    }
+
+    .closing-copy h2 {
+      max-width: 460px;
+      color: var(--white);
+    }
+
+    .closing-copy p {
+      max-width: 440px;
+      color: #d3ddd3;
+      font-size: 13px;
+      line-height: 1.9;
+    }
+
+    footer {
+      padding: 34px 0;
+      background: #0d281e;
+    }
+
+    .footer-links a {
+      transition: color .2s;
+    }
+
+    .footer-links a:hover {
+      color: #e5cf9f;
+    }
+
+    /* Responsive refinements */
+    @media(max-width:950px) {
+      .wrap { width: calc(100% - 48px); }
+      .navlinks { gap: 17px; }
+      .hero { min-height: 550px; }
+      .hero-copy { padding-left: 24px; }
+      .hero-visual { min-height: 550px; }
+      .benefit { padding-inline: 12px; }
+      .community-copy { padding: 42px 26px; }
+      .companion-layout { gap: 35px; }
+    }
+
+    @media(max-width:700px) {
+      .wrap { width: calc(100% - 36px); }
+      .nav { height: 70px; gap: 10px; }
+      .brand img { width: 40px; height: 40px; }
+      .brand strong { font-size: 17px; }
+      .navlinks {
+        top: 70px; left: 18px; right: 18px;
+        padding: 19px; gap: 16px;
+        background: var(--white); border: 1px solid var(--line);
+        border-radius: 8px; box-shadow: var(--shadow-soft);
+      }
+      .nav-start { padding: 9px 12px; }
+      .hero { grid-template-columns: 1fr; }
+      .hero-copy { padding: 54px 22px 30px; }
+      h1 { max-width: 560px; font-size: clamp(45px, 11vw, 62px); }
+      .hero-copy > p { font-size: 13px; }
+      .hero-visual {
+        min-height: 390px; margin: 0 16px 16px;
+        border-radius: 150px 7px 7px 7px;
+      }
+      .hero-visual img { object-position: 42% center; }
+      .hero-visual:before {
+        background: linear-gradient(180deg, var(--paper), transparent 22%);
+      }
+      .hero-image-caption { right: 14px; bottom: 14px; }
+      .benefit-grid { grid-template-columns: 1fr 1fr; row-gap: 12px; }
+      .benefit { padding: 8px 5px; border: 0; }
+      .benefit:nth-child(odd) { border-right: 1px solid #d9d9cc; }
+      section.block { padding: 70px 0; }
+      .section-head { margin-bottom: 34px; }
+      .section-head h2, h2 { font-size: 34px; }
+      .feeling-grid { grid-template-columns: 1fr 1fr; gap: 11px; }
+      .feeling-card img { height: 150px; }
+      .feeling-card-body { padding: 15px; }
+      .feeling-card h3 { font-size: 17px; }
+      .feeling-card p { font-size: 11px; }
+      .steps { grid-template-columns: 1fr; gap: 7px; }
+      .scripture { grid-template-columns: 1fr; }
+      .scripture-image, .scripture-image img { height: 230px; min-height: 230px; }
+      .scripture-copy { padding: 42px 24px; }
+      .journey-grid { grid-template-columns: 1fr 1fr; gap: 11px; }
+      .journey img { height: 145px; }
+      .journey-body { padding: 14px; }
+      .journey h3 { font-size: 17px; }
+      .journey p { font-size: 11px; }
+      .community { grid-template-columns: 1fr; }
+      .community-copy { padding: 55px 22px; }
+      .community-image { height: 260px; }
+      .companion-layout { grid-template-columns: 1fr; gap: 30px; }
+      .closing { grid-template-columns: 1fr; }
+      .closing-copy { padding: 48px 24px; }
+      .closing-image, .closing-image img { height: 240px; min-height: 240px; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media(max-width:390px) {
+      .nav-start { font-size: 10px; }
+      .hero-copy { padding-inline: 18px; }
+      .hero-visual { min-height: 330px; }
+      .benefit-grid { grid-template-columns: 1fr; }
+      .benefit, .benefit:nth-child(odd) {
+        border: 0; border-bottom: 1px solid #d9d9cc; padding: 10px 0;
+      }
+      .benefit:last-child { border-bottom: 0; }
+      .feeling-grid, .journey-grid { grid-template-columns: 1fr; }
+      .feeling-card img { height: 190px; }
+      .journey img { height: 190px; }
+    }
+
+    @media(prefers-reduced-motion:reduce) {
+      *, *::before, *::after { scroll-behavior:auto!important; transition:none!important; }
+      .reveal { opacity:1; transform:none; }
+    }
+
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap nav">
+      <a class="brand" href="#" aria-label="Hope & Heaven home">
+        <img src="logo.png" alt="Hope & Heaven logo">
+        <span><strong>Hope &amp; Heaven</strong><small>BY ASHER</small></span>
+      </a>
+      <nav class="navlinks" id="navlinks" aria-label="Main navigation">
+        <a href="#">Home</a><a href="#experience">Explore</a><a href="#journeys">Prayer journeys</a><a href="#scripture">Scripture</a><a href="#community">Community</a>
+      </nav>
+      <div class="nav-actions"><a class="nav-login" href="/app/login">Log in</a><a class="nav-start" href="/app/login">Get started</a></div>
+      <button class="menu" id="menu" aria-label="Toggle navigation" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="kicker reveal">Faith · Prayer · Encouragement</div>
+        <h1 class="reveal">Find hope, healing and peace <em>in Jesus.</em></h1>
+        <p class="reveal">A faith-filled space to grow closer to God, explore His Word, pray through life's emotions, and walk with a caring community.</p>
+        <div class="hero-actions reveal">
+          <a class="btn btn-primary" href="/app/login">Start your journey <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="btn btn-outline" href="#experience"><i class="fa-regular fa-circle-play"></i> Explore the experience</a>
+        </div>
+        <div class="hero-proof reveal">
+          <div class="proof-icons"><span><i class="fa-solid fa-heart"></i></span><span><i class="fa-solid fa-book-bible"></i></span><span><i class="fa-solid fa-hands-praying"></i></span></div>
+          <span>A personal space for Scripture, prayer and everyday life.</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="images/hero-jesus.webp" alt="Jesus welcoming the viewer at sunrise in a peaceful biblical landscape">
+        <div class="hero-image-caption"><i class="fa-solid fa-sun"></i> You can begin right where you are.</div>
+      </div>
+    </section>
+
+    <section class="benefits">
+      <div class="wrap benefit-grid">
+        <div class="benefit"><i class="fa-solid fa-book-open"></i><div><strong>Discover Scripture</strong><span>Find verses for every season.</span></div></div>
+        <div class="benefit"><i class="fa-solid fa-hands-praying"></i><div><strong>Guided Prayer</strong><span>Make space to talk with God.</span></div></div>
+        <div class="benefit"><i class="fa-solid fa-users"></i><div><strong>Faith Community</strong><span>Share, support and grow.</span></div></div>
+        <div class="benefit"><i class="fa-regular fa-bookmark"></i><div><strong>Save &amp; Reflect</strong><span>Keep what speaks to you.</span></div></div>
+      </div>
+    </section>
+
+    <section class="block feelings" id="experience">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">You're not alone</div><h2>Whatever you're feeling, bring it to God.</h2><p>Explore Scripture and thoughtful reflections through the emotions and moments you're experiencing today.</p></div>
+        <div class="feeling-grid">
+          <article class="feeling-card reveal"><img src="images/jesus-comfort.webp" alt="Jesus comforting a woman in a quiet moment"><div class="feeling-card-body"><h3>When you're hurting</h3><p>Find comfort in God's presence when life feels heavy and your heart needs healing.</p></div></article>
+          <article class="feeling-card reveal"><img src="images/jesus-prayer.webp" alt="Jesus in a peaceful moment of prayer"><div class="feeling-card-body"><h3>When you're anxious</h3><p>Discover words of peace when tomorrow feels uncertain and your mind won't rest.</p></div></article>
+          <article class="feeling-card reveal"><img src="images/jesus-walking.webp" alt="Jesus walking along a sunlit path"><div class="feeling-card-body"><h3>When you feel distant</h3><p>Reconnect with your faith, even when prayer feels difficult.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="block how">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">A simpler way to connect</div><h2>Small moments. A deeper connection.</h2><p>No pressure to have everything figured out. Just a simple way to spend meaningful moments with God.</p></div>
+        <div class="steps">
+          <article class="step reveal"><div class="step-no">01</div><h3>Share how you feel</h3><p>Choose an emotion or situation that reflects what's happening in your life right now.</p></article>
+          <article class="step reveal"><div class="step-no">02</div><h3>Discover His Word</h3><p>Explore Bible verses and reflections connected to what you're going through.</p></article>
+          <article class="step reveal"><div class="step-no">03</div><h3>Take a moment with God</h3><p>Reflect, pray and carry a little more faith and hope into the rest of your day.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="scripture" id="scripture">
+      <div class="scripture-image"><img src="images/bible-cross.webp" alt="An open Bible and wooden cross overlooking a sunlit valley"></div>
+      <div class="scripture-copy"><div class="kicker">Scripture for today</div><blockquote>“Come to me, all you who are weary and burdened, and I will give you rest.”</blockquote><cite>Matthew 11:28</cite></div>
+    </section>
+
+    <section class="block journeys" id="journeys">
+      <div class="wrap">
+        <div class="section-head reveal"><div class="kicker">Walk with Jesus</div><h2>Guidance for the season you're in.</h2><p>Some seasons call for more than a single verse. Find gentle, guided moments to help you keep going, one day at a time.</p></div>
+        <div class="journey-grid">
+          <article class="journey reveal"><img src="images/jesus-comfort.webp" alt="Jesus offering comfort"><div class="journey-body"><h3>Walking Through Grief</h3><p>A gentle journey through loss, healing and finding comfort in God's love.</p><a class="journey-link" href="/app/login">Explore journey <i class="fa-solid fa-arrow-right"></i></a></div></article>
+          <article class="journey reveal"><img src="images/jesus-prayer.webp" alt="A quiet prayer moment"><div class="journey-body"><h3>Anxiety Reset</h3><p>Let go of overwhelming thoughts and rediscover peace through Scripture and prayer.</p><a class="journey-link" href="/app/login">Explore journey <i class="fa-solid fa-arrow-right"></i></a></div></article>
+          <article class="journey reveal"><img src="images/jesus-community.webp" alt="Jesus walking with a companion"><div class="journey-body"><h3>Grow in Faith</h3><p>Build a deeper relationship with God through daily reflection and prayer.</p><a class="journey-link" href="/app/login">Explore journey <i class="fa-solid fa-arrow-right"></i></a></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="community" id="community">
+      <div class="community-copy">
+        <div class="kicker">A faith-filled community</div>
+        <h2>Walk together. Grow in faith.</h2>
+        <p>Faith is not always an easy road to walk alone. Find encouragement, share prayers and grow alongside others seeking a closer walk with God.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="/app/login">Join the community <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+      <div class="community-image"><img src="images/jesus-community.webp" alt="Jesus walking alongside a companion through a peaceful landscape"></div>
+    </section>
+
+    <section class="block companion" id="companion">
+      <div class="wrap companion-layout">
+        <div class="companion-copy reveal">
+          <div class="kicker">A companion for your faith</div><h2>It's okay to have questions.</h2>
+          <p>Faith doesn't mean having every answer. Explore your questions, understand Scripture and make space for thoughtful reflection grounded in God's Word.</p>
+          <div class="features">
+            <div class="feature"><i class="fa-solid fa-book-open"></i><div><strong>Explore Scripture</strong><span>Understand Bible passages and discover their meaning.</span></div></div>
+            <div class="feature"><i class="fa-solid fa-comments"></i><div><strong>Ask what's on your mind</strong><span>Have thoughtful conversations about faith and life.</span></div></div>
+            <div class="feature"><i class="fa-solid fa-heart"></i><div><strong>Reflect with purpose</strong><span>Find questions and reflections to deepen your understanding.</span></div></div>
+          </div>
+        </div>
+        <div class="chat reveal">
+          <div class="chat-head"><div class="avatar"><i class="fa-solid fa-book-bible"></i></div><div><strong>Faith Conversations</strong><small>A space to explore your questions</small></div></div>
+          <div class="bubble">I've been feeling distant from God lately. I don't even know how to pray anymore.</div>
+          <div class="bubble reply">You don't need perfect words to reach out to God. Even a quiet moment can become a prayer. <br><strong>Romans 8:26</strong></div>
+          <div class="bubble">So I can still come to Him, even when I don't know what to say?</div>
+          <div class="bubble reply">Absolutely. You can begin exactly where you are.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="closing-image"><img src="images/jesus-walking.webp" alt="A peaceful path through a sunlit biblical landscape"></div>
+      <div class="closing-copy">
+        <div class="kicker">Take hope with you</div><h2>Grow in faith, every day.</h2>
+        <p>Access Scripture, prayer journeys and thoughtful reflections. Stay connected to God's Word wherever life takes you.</p>
+        <div class="hero-actions"><a class="btn btn-primary" href="/app/login">Begin your journey <i class="fa-solid fa-arrow-right"></i></a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="purpose">
+    <div class="wrap footer-inner">
+      <a class="brand" href="#"><img src="logo.png" alt=""><span><strong>Hope &amp; Heaven</strong><small>BY ASHER</small></span></a>
+      <p>A gentle space to find comfort, strength and hope through God's Word.</p>
+      <div class="footer-links"><a href="#experience">Explore</a><a href="#journeys">Journeys</a><a href="#scripture">Scripture</a><a href="#community">Community</a><a href="mailto:support@hopeandheaven.com">Contact</a></div>
+    </div>
+  </footer>
+
+  <script>
+    const menu=document.getElementById("menu");
+    const navlinks=document.getElementById("navlinks");
+    menu.addEventListener("click",()=>{
+      const open=navlinks.classList.toggle("open");
+      menu.setAttribute("aria-expanded",String(open));
+      menu.innerHTML=open?'<i class="fa-solid fa-xmark"></i>':'<i class="fa-solid fa-bars"></i>';
+    });
+    navlinks.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{
+      navlinks.classList.remove("open");
+      menu.setAttribute("aria-expanded","false");
+      menu.innerHTML='<i class="fa-solid fa-bars"></i>';
+    }));
+    const reduceMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if("IntersectionObserver" in window && !reduceMotion){
+      const observer=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}
+        });
+      },{threshold:.12});
+      document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+    }else{
+      document.querySelectorAll(".reveal").forEach(el=>el.classList.add("visible"));
+    }
+  </script>
+</body>
+</html>
