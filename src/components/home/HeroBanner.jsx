@@ -7,12 +7,12 @@ export default function HeroBanner() {
 
         {/* Background image */}
         <div
-          className="absolute inset-0 animate-[drift_24s_ease-in-out_infinite_alternate] bg-cover"
-          style={{
-            backgroundImage: "url('/home-banner.png')",
-            backgroundPosition: "right ",
-          }}
-        />
+  className="absolute inset-0 animate-[drift_24s_ease-in-out_infinite_alternate] bg-cover"
+  style={{
+    backgroundImage: `url('${import.meta.env.BASE_URL}home-banner.png')`,
+    backgroundPosition: "right",
+  }}
+/>
 
         {/* Subtle text readability overlay */}
 <div className="absolute inset-0 bg-gradient-to-r from-[#10291F]/75 via-[#10291F]/35 to-transparent" />

@@ -69,12 +69,12 @@ export default function CommunityPage({ onNavigate }) {
 
         {/* Background image */}
         <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/community-banner.png')",
-            backgroundPosition: "center",
-          }}
-        />
+  className="absolute inset-0 bg-cover bg-center"
+  style={{
+    backgroundImage: `url('${import.meta.env.BASE_URL}community-banner.png')`,
+    backgroundPosition: "center",
+  }}
+/>
 
         {/* Left-side readability overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#10291F]/80 via-[#10291F]/45 to-transparent" />
